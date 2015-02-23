@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<project name="anabena.com" default="help">
+    <target name="build">
+        <echo>Deploying application...</echo>
+        <property name="execoutput" value="" />
+        <property name="home" value="/var/www/anabena" />
+        <property name="sshPath" value="/home/dja/.ssh" />
+        <exec 
+            command="rsync
+                --recursive
+                --links
+                --compress --compress-level=9
+                --delete-after
+                -e 'ssh -c arcfour -o Compression=no -x'
+                --exclude-from=${project.basedir}/exclude.txt
+                ${project.basedir}/
+                anabena:${home}/"
+            outputProperty="execoutput"
+        />
+        <ssh host="anabena.com" username="ubuntu" 
+             pubkeyfile="${sshPath}/id_rsa.pub"
+             privkeyfile="${sshPath}/id_rsa"
+             command="composer update --no-interaction --working-dir ${home}" />
+        <ssh host="anabena.com" username="ubuntu" 
+             pubkeyfile="${sshPath}/id_rsa.pub"
+             privkeyfile="${sshPath}/id_rsa" 
+             command="${home}/yii/migrate --interactive=0" />
+    </target>
+    <target name="help">
+        <echo>Use "phing build" command</echo>
+    </target>
+</project>

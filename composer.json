@@ -1,0 +1,67 @@
+{
+    "name": "bariew/yii2-cms-project",
+    "description": "Yii2 Null CMS",
+    "keywords": ["yii2", "cms", "basic"],
+    "homepage": "http://www.yii2.anabena.com/",
+    "type": "project",
+    "license": "BSD-3-Clause",
+    "support": {
+        "issues": "https://github.com/yiisoft/yii2/issues?state=open",
+        "forum": "http://www.yiiframework.com/forum/",
+        "wiki": "http://www.yiiframework.com/wiki/",
+        "irc": "irc://irc.freenode.net/yii",
+        "source": "https://github.com/yiisoft/yii2"
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.4.0",
+        "fxp/composer-asset-plugin": "*",
+        "yiisoft/yii2": "2.0.2",
+        "yiisoft/yii2-bootstrap": "2.0.2",
+        "yiisoft/yii2-swiftmailer": "2.0.2",
+        "bariew/yii2-module-cms-module": "dev-master",
+        "bariew/yii2-config-cms-module": "dev-master",
+        "bariew/yii2-i18n-cms-module": "dev-master",
+        "bariew/yii2-rbac-cms-module": "dev-master",
+        "bariew/yii2-notice-cms-module": "dev-master",
+        "bariew/yii2-page-cms-module": "dev-master",
+        "bariew/yii2-user-cms-module": "dev-master",
+        "bariew/yii2-event-cms-module": "dev-master",
+        "bariew/yii2-theme-cms-module": "dev-master",
+        "bariew/phptools": "dev-master",
+        "bariew/yii2-blog-cms-module": "dev-master",
+        "bariew/yii2-comment-cms-module": "dev-master"
+    },
+    "require-dev": {
+        "yiisoft/yii2-debug": "2.0.2",
+        "yiisoft/yii2-gii": "2.0.2"
+    },
+    "config": {
+        "process-timeout": 1800
+    },
+    "scripts": {
+        "post-create-project-cmd": [
+            "yii\\composer\\Installer::postCreateProject"
+        ]
+    },
+    "extra": {
+        "yii\\composer\\Installer::postCreateProject": {
+            "setPermission": [
+                {
+                    "runtime": "0777",
+                    "web/assets": "0777",
+                    "web/files": "0777",
+                    "web/themes": "0777",
+                    "config/local": "0777",
+                    "yii": "0755",
+
+                    "migrations" : "0777"
+                }
+            ]
+        },
+        "asset-installer-paths": {
+            "npm-asset-library": "vendor/npm",
+            "bower-asset-library": "vendor/bower"
+        }
+    }
+}
