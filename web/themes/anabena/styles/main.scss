@@ -1,0 +1,112 @@
+@import "compass";
+@import "compass/css3";
+@import "reset";
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+
+    // a[href]:after { выводит на печать содержимое href
+    //     content: " (" attr(href) ")";
+    // }
+
+    // abbr[title]:after {
+    //     content: " (" attr(title) ")";
+    // }
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
+
+
+h1, h2, h3, h4 {
+    font-family: 'Blogger Sans';
+}
+
+body {
+    font-size: 14px;
+    line-height: 1.4;
+    color: #222;
+    font-family: "Times New Roman", Times, Baskerville, Georgia, serif;
+}
+
+a {
+    color: #ff4800;
+    &:hover {
+
+    }
+}
+
+.wrapper {
+    width: 100%;
+    margin: 0 auto;
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+}
+
+@import "header";
+@import "nav";
+@import "content";
+@import "elements";
+//@import "asideLeft";
+@import "footer";

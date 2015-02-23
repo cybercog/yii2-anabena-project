@@ -13,14 +13,16 @@ use yii\web\AssetBundle;
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @since 2.0
  */
-class AppAsset extends AssetBundle
+class IndexAsset extends AssetBundle
 {
     public $basePath = '@webroot/themes/anabena';
     public $baseUrl = '@web/themes/anabena';
     public $css = [
-        'styles/site.css',
+        'styles/main.css',
     ];
     public $js = [
+        'scripts/jquery.carouFredSel-6.2.1-packed.js',
+        'scripts/main.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',

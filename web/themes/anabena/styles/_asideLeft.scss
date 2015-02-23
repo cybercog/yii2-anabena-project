@@ -1,0 +1,10 @@
+@import "compass";
+@import "compass/css3";
+
+.left_sidebar {
+	float: left;
+	width: 250px;
+	margin-left: -100%;
+	position: relative;
+	background: #B5E3FF;
+}
