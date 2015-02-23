@@ -2,6 +2,7 @@
 use yii\helpers\Html;
 use app\web\themes\anabena\IndexAsset;
 use yii\web\View;
+use bariew\pageModule\widgets\MainMenu;
 
 /**
  * @var View $this
@@ -30,13 +31,10 @@ IndexAsset::register($this);
           <li class="language_site-item"><a href="">En</a></li>
         </ul>
         <nav class="nav nav--header">
-          <ul class="nav_list">
-            <li class="nav_item active"><a href="">Главная</a></li>
-            <li class="nav_item"><a href="">Портфолио </a></li>
-            <li class="nav_item"><a href="">Отзывы</a></li>
-            <li class="nav_item"><a href="">Контакты</a></li>
-            <li class="nav_item"><a href="">Блог</a></li>
-          </ul>
+            <?= MainMenu::widget([
+                'options' => ['class' => 'nav_list'],
+                'itemOptions' => ['class' => 'nav_item']
+            ]) ; ?>
         </nav>
       </header><!-- .header-->
 

@@ -15,8 +15,8 @@ use yii\web\AssetBundle;
  */
 class IndexAsset extends AssetBundle
 {
-    public $basePath = '@webroot/themes/anabena';
-    public $baseUrl = '@web/themes/anabena';
+    public $basePath = '@webroot/themes/anabena/assets';
+    public $baseUrl = '@web/themes/anabena/assets';
     public $css = [
         'styles/main.css',
     ];

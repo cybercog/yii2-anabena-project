@@ -61,10 +61,16 @@
                 'baseUrl' => '@web/themes/null',
             ],
         ],
+        'user' => [
+            'identityClass' => 'app\\modules\\user\\models\\User'
+        ]
     ],
     'modules' => [
         'config' => ['class' => 'bariew\\configModule\\Module'],
         'module' => ['class' => 'bariew\\moduleModule\\Module'],
+        'user' => ['class' => 'app\\modules\\user\\Module'],
+        'blog' => ['class' => 'app\\modules\\blog\\Module'],
+        'portfolio' => ['class' => 'app\\modules\\portfolio\\Module'],
     ],
     'params'    => [
         'adminEmail'    => 'your.email@site.com'

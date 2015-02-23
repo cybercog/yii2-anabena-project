@@ -9,7 +9,8 @@
             command="rsync
                 --recursive
                 --links
-                --compress --compress-level=9
+                --compress 
+                --compress-level=9
                 --delete-after
                 -e 'ssh -c arcfour -o Compression=no -x'
                 --exclude-from=${project.basedir}/exclude.txt
