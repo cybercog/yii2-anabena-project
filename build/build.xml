@@ -14,7 +14,7 @@
                 --delete-after
                 -e 'ssh -c arcfour -o Compression=no -x'
                 --exclude-from=${project.basedir}/exclude.txt
-                ${project.basedir}/
+                ${project.basedir}/../
                 anabena:${home}/"
             outputProperty="execoutput"
         />
