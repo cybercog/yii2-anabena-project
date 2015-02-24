@@ -8,7 +8,7 @@ nbproject
 Thumbs.db
 .DS_Store
 
-build.xml
+/build
 /vendor
 /config/local/*
 /web/files/*
